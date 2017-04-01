@@ -1,1 +1,22 @@
 #header a.chosen-single, #project_quick_jump_box_chosen { color:black; }
+
+.chosen-container {
+    width: 200px !important;
+}
+
+@media screen and (max-width: 899px)
+{
+    .chosen-container {
+        /*font-size: 1.25em;*/
+        position: absolute;
+        top: 20px;
+        left: 5px;
+        float: left;
+        width: calc(100% - 72px) !important;
+        max-width: 100%;
+    }
+}
+/* Tweak the offset to hide the other icon partially visible */
+.chosen-container-single .chosen-search input[type="text"] {
+    background: url('../images/chosen-sprite.png') no-repeat 100% -22px;
+}
