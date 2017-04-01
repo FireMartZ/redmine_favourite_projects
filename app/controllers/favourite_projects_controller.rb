@@ -53,5 +53,27 @@ class FavouriteProjectsController < ApplicationController
 
     redirect_to :controller => 'favourite_projects', :action => 'index'
   end
-  
+
+  def remove_favourite
+    favourite = FavouriteProject.find(params[:id])
+    if (favourite.user_id == User.current.id)
+      FavouriteProject.destroy(params[:id])
+
+      respond_to do |format|
+        format.html { redirect_to_referer_or { render :text => ('Deleting Project from favourite-projects.'), :layout => true} }
+      end
+    end
+  end
+
+  def add_favourite
+    @project = FavouriteProject.new
+    @project.project_id = params[:id]
+    @project.user_id = User.current.id
+
+    if @project.save then
+      respond_to do |format|
+        format.html { redirect_to_referer_or { render :text => ('Adding Project to favourite-projects.'), :layout => true} }
+      end
+    end
+  end  
 end

@@ -26,6 +26,7 @@ fr:
                 available_projects: Projets disponibles
                 header_projects_cols: Nom du projet
                 add_project: Ajouter ce projet
+                remove_project: Enlever ce projet
             settings:
                 modify_project_jump_list: Affiche les favoris en haut de la boite de sélection - Aller au projet
                 show_detailed_project_view: Affiche les tableaux de suivi des projets Ma Page

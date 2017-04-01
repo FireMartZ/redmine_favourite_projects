@@ -7,6 +7,7 @@ if Rails::VERSION::MAJOR >= 3
   RedmineApp::Application.config.after_initialize do
     require_dependency 'application_helper'
     require_dependency 'favourite_projects_searchbox_hook_listener'
+    require_dependency 'favourite_projects_view_hooks'
 
     unless Project.included_modules.include?(FavouriteProjectsProjectPatch)
       Project.send(:include, FavouriteProjectsProjectPatch)
