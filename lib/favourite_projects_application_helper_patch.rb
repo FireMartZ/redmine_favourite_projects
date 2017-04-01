@@ -33,6 +33,7 @@ module FavouriteProjectsApplicationHelperPatch
     		    { :value => project_path(:id => p, :jump => current_menu_item) }
     		  end
 
+					content_tag( :span, nil, :class => 'jump-box-arrow') +
     		  select_tag('project_quick_jump_box', options, 
     		  	:onchange => 'if (this.value != \'\') { window.location = this.value; }')
     		end
