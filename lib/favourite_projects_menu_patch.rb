@@ -20,7 +20,7 @@ module FavouriteProjectsMenuPatch
           end
 
           User.current.ordered_favourite_projects.each do |fav|
-            links << link_to(fav.project.name, fav.project, :class => 'icon icon-projects')
+            links << content_tag('li', link_to(fav.project.name, fav.project, :class => 'icon icon-projects'))
           end
 
           #links.empty? ? nil : content_tag('ul', links.join.html_safe)
